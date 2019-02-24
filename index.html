@@ -1,7 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Assignment 1 - Persha</title>
         <script src="script.js"></script>
-        
     </head>
+    <body>
+        <center>
+        <h1>Assignment 1</h1>
+        <br/>
+        <form action="1_succeeded.html" onsubmit="return checkFields()" method="post" >
+                <label title="Two or more words, separated by whitespace." style="color: blue;">Username</label>
+                <br> 
+                <br>
+                <input type="text" name="username" id="username"/> 
+                <br>  
+                <br>
+                <label title="Password must contain 8 or more chars. At least one lower case char. At least one upper case char. At least one number." for="password" style="color: blue;">Password</label>
+                <br> 
+                <br>
+                <input type="password" name="password" id="password"/> 
+                <br>
+                <br>
+                <label title="Passwords must be the same." for="password" style="color: blue;">Confirm password</label>
+                <br> 
+                <br>
+                <input type="password" name="password" id="confirm_password"/> 
+                <br>
+                <br>
+                <br/>
+                <br/>
+                <input type="submit" name="submit" id="submit"/> 
+            </form> 
+        </center>
+
+    </body>
 </html>
