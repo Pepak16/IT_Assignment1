@@ -1,24 +1,18 @@
-import {mariadb} from "mariadb";
+var mariadb = require('mariadb')
 
-var mariadb = require('mariadb');
-var connection = mariadb
- .createConnection({
-   host: '192.168.0.102',
-   port: '3306',
-   user: 'root', 
-   password:'root', 
-   database:'itproject'
-}).then(conn => {
-    console.log('Database Connected successfully!')
-});
-
-connection.query('SELECT * from user', function(err){ 
-if (err){ 
-  console.log(err.code);  
-  console.log(err.fatal);  
-  }
-});
-
-connection.end();
-
-
+mariadb.createConnection({ // Open a new connection                                                                                                                                           
+    user: 'root',
+    password: 'root',
+    host: '25.1.147.8',
+    port: 3306,
+    database:'itproject'
+})
+    .then(conn => {
+        conn.query('SELECT * from user') // Execute a query                                                                                                                                
+            .then(result => { // Print the results                                                                                                                                            
+                for (row of result) {
+                    console.log(row)
+                }
+            })
+            .then(conn.destroy()) // Close the connection                                                                                                                                     
+    })
