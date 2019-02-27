@@ -2,7 +2,7 @@ var mariadb = require('mariadb')
 
 mariadb.createConnection({ // Open a new connection                                                                                                                                           
     user: 'root',
-    password: 'root',
+    password: 'toor',
     host: '25.1.147.8',
     port: 3306,
     database:'itproject'
