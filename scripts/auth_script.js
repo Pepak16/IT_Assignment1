@@ -22,3 +22,20 @@ function checkFields() {
         return false;
     }
 }
+
+function signupUser() {
+
+}
+
+function loginUser() {
+    if (authUser()) {
+        return true;
+    } else {
+        return false;
+        alert("User info is wrong. Please check again.");
+    }
+}
+
+function authUser() {
+    return false;
+}
