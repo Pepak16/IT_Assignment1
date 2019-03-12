@@ -5,27 +5,30 @@
     <script src="scripts/auth_script.js"></script>
 </head>
     <body>
-        <center>
+        <?php include 'top.php'; ?>
+        <div id="content">
             <h1>Login</h1>
-            <form action="succes_page.html" onsubmit="return loginUser()" method="post" >
-                <label title="Username" style="color: blue;">Username</label>
+            <form action="succes_page.php" onsubmit="return loginUser()" method="post" >
+                <label title="Username">Username</label>
+                <br>
                 <br>
                 <input type="text" name="username" id="username"/> 
                 <br>  
                 <br>
-                <label title="Password" for="password" style="color: blue;">Password</label>
+                <label title="Password" for="password">Password</label>
+                <br>
                 <br>
                 <input type="password" name="password" id="password"/> 
                 <br>
                 <br>
-                <input type="button" onclick="location.href='register_page.html';" value="Sign up"/>
-                <input type="submit" name="Submit" id="submit" value="Login"/>
+                <br>
+                <br>
+                <input type="submit" name="Submit" id="submit" value="Submit"/> 
                 <br>
                 <br>
                 <input type="button" value="Go back" onclick="history.back()">
-
             </form> 
-        </center>
+        </div>
     </body>
 </html>
 
