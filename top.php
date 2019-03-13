@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="style.css">
+<?php include 'ViewController.php'; ?>
 <div id="headertitle"><h1>Instakham Photos</h1></div>
 <ul>
     <li><a href="index.php">Home</a></li>

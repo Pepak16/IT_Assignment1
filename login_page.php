@@ -2,13 +2,19 @@
 <html>
 <head>
     <title>Login page</title>
-    <script src="scripts/auth_script.js"></script>
 </head>
     <body>
-        <?php include 'top.php'; ?>
+        <?php include 'top.php'; 
+                if (isset($_POST['submit'])) {
+                    echo 'yessss';
+                    //loginUser($_GET['username'],$_GET['password']);
+                } else {
+                    echo "<p>wrong user info</p>";
+                }
+            ?>
         <div id="content">
             <h1>Login</h1>
-            <form action="succes_page.php" onsubmit="return loginUser()" method="post" >
+            <form action="login_succes_page.php" method="post" >
                 <label title="Username">Username</label>
                 <br>
                 <br>
@@ -23,12 +29,16 @@
                 <br>
                 <br>
                 <br>
-                <input type="submit" name="Submit" id="submit" value="Submit"/> 
+                <input type="submit" name="submit" id="submit" value="submit"/> 
                 <br>
                 <br>
                 <input type="button" value="Go back" onclick="history.back()">
             </form> 
+            
         </div>
     </body>
 </html>
 
+<?php 
+    
+?>
