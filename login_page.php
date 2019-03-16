@@ -5,16 +5,23 @@
 </head>
     <body>
         <?php include 'top.php'; 
-                if (isset($_POST['submit'])) {
-                    echo 'yessss';
-                    //loginUser($_GET['username'],$_GET['password']);
-                } else {
-                    echo "<p>wrong user info</p>";
-                }
-            ?>
+        if (isset($_POST['submit'])) {
+            if (loginUser($_POST['username'],$_POST['password'])) {      
+                if (session_status() == PHP_SESSION_NONE) { 
+                    session_start();
+                    $_SESSION["logged_in"] = true;
+                } 
+                $warningtext = "";
+                header('Location: succes_page.php');
+            } else {
+                $warningtext = "Wrong info.. Please try again.";
+            }
+        } 
+        
+        ?>
         <div id="content">
             <h1>Login</h1>
-            <form action="login_succes_page.php" method="post" >
+            <form method="post" action="#" >
                 <label title="Username">Username</label>
                 <br>
                 <br>
@@ -33,12 +40,13 @@
                 <br>
                 <br>
                 <input type="button" value="Go back" onclick="history.back()">
+                <br>
+                <br>
             </form> 
-            
+            <?php 
+            echo '<span style="color: red;">'.$warningtext.'</span>'; ?>
         </div>
     </body>
 </html>
 
-<?php 
-    
-?>
+

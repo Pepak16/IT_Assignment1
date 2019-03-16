@@ -24,7 +24,7 @@
     function authentificateUser($un, $pw) {
         require 'db_config.php';
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        $sql = 'SELECT user_name FROM user WHERE user_name = :domain_name AND user_password = :domain_pass';
+        $sql = 'SELECT user_id FROM user WHERE user_name = :domain_name AND user_password = :domain_pass';
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':domain_name', $un);
         $stmt->bindParam(':domain_pass', $pw);
