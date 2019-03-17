@@ -6,7 +6,7 @@
     <body>
         <?php include 'top.php' ?>
         <div id="content">
-            <br><br>
+            <br><br>    
             <h1 style="color: green">Logged in!</h1>
             <p>You have entered correct user credentials!</p>
         </div>

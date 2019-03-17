@@ -5,12 +5,36 @@
 </head>
     <body>
         <?php include 'top.php'; 
+        // if (session_status() == PHP_SESSION_NONE) {
+        //     session_start();
+        //     $_SESSION["logged_in"] = true;
+        //     if ($_SESSION["logged_in"] === true) {
+        //         echo 'session is set to logged in true';
+        //     } else {
+        //         echo 'user is signed out';
+        //     }
+        // }
+
+        // //session_destroy();
+        // if (session_status() == PHP_SESSION_NONE) {
+        //     echo 'session is off now';
+        // } else {
+        //     echo 'session is still active';
+        // }
+        
+        if ($_SESSION["logged_in"] == true) {
+            echo 'you are logged in';
+        }
+
         if (isset($_POST['submit'])) {
             if (loginUser($_POST['username'],$_POST['password'])) {      
                 if (session_status() == PHP_SESSION_NONE) { 
                     session_start();
                     $_SESSION["logged_in"] = true;
-                } 
+                    echo 'session is set';
+                } else {
+                    $warningtext = "You are already logged in!";
+                }
                 $warningtext = "";
                 header('Location: succes_page.php');
             } else {

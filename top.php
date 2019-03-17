@@ -4,7 +4,12 @@
 <ul>
     <li><a href="index.php">Home</a></li>
     <?php 
-        if (isset($_SESSION[“logged_in”]) && $_SESSION[“logged_in”]) {
+        session_start();
+
+        if (true) {
+            
+            echo "<li><a href=\"login_page.php\">Logout</a></li>";
+            //echo "<li>You are logged in as: $_SESSION[\"logged_in\"]</li>";
             // login menu is not showing, when the user is logged in
         } else {
             echo "<li><a href=\"login_page.php\">Login</a></li>";
@@ -12,4 +17,3 @@
         }
     ?>
 </ul>
-
