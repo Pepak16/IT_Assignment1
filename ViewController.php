@@ -10,12 +10,18 @@
         require 'db_connect.php';
         if (authentificateUser($username,$password)) {
             return true;
-            echo 'logged in successfully';
         } else {
             return false;
-            echo 'wrong user info';
         }
     }
 
+    function registerUser($username, $password, $phonenumber, $email, $zipcode) {
+        require 'db_connect.php';
+        if (insertUserInfo($username, $password, $phonenumber, $email, $zipcode)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 ?>

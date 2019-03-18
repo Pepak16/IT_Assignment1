@@ -6,14 +6,16 @@
     <?php 
         session_start();
 
-        if (true) {
+        if ($_SESSION["logged_in"] == true) {
             
-            echo "<li><a href=\"login_page.php\">Logout</a></li>";
+            echo "<li><a href=\"logout.php\">Logout</a></li>";
             //echo "<li>You are logged in as: $_SESSION[\"logged_in\"]</li>";
             // login menu is not showing, when the user is logged in
         } else {
             echo "<li><a href=\"login_page.php\">Login</a></li>";
             echo "<li><a href=\"register_page.php\">Signup</a></li>";
         }
+
+      
     ?>
 </ul>

@@ -5,47 +5,32 @@
 </head>
     <body>
         <?php include 'top.php'; 
-        // if (session_status() == PHP_SESSION_NONE) {
-        //     session_start();
-        //     $_SESSION["logged_in"] = true;
-        //     if ($_SESSION["logged_in"] === true) {
-        //         echo 'session is set to logged in true';
-        //     } else {
-        //         echo 'user is signed out';
-        //     }
-        // }
 
-        // //session_destroy();
-        // if (session_status() == PHP_SESSION_NONE) {
-        //     echo 'session is off now';
-        // } else {
-        //     echo 'session is still active';
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        session_start(); 
+
+        // if ($_SESSION["logged_in"] == true) {
+        //     echo 'you are logged in';
         // }
-        
-        if ($_SESSION["logged_in"] == true) {
-            echo 'you are logged in';
-        }
 
         if (isset($_POST['submit'])) {
-            if (loginUser($_POST['username'],$_POST['password'])) {      
-                if (session_status() == PHP_SESSION_NONE) { 
-                    session_start();
+            if (loginUser($username,$password)) {    
                     $_SESSION["logged_in"] = true;
-                    echo 'session is set';
-                } else {
-                    $warningtext = "You are already logged in!";
-                }
-                $warningtext = "";
-                header('Location: succes_page.php');
+                    echo 'You are now logged in';
+                    $warningtext = "";
+                    header('Location: login_succes_page.php');
             } else {
                 $warningtext = "Wrong info.. Please try again.";
             }
-        } 
+        }
+        
         
         ?>
         <div id="content">
             <h1>Login</h1>
-            <form method="post" action="#" >
+            <form method="post" action="#">
                 <label title="Username">Username</label>
                 <br>
                 <br>
