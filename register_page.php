@@ -14,7 +14,6 @@
             $email = $_POST['email'];
             $zipcode = $_POST['zip'];
 
-            session_start(); 
 
             if (isset($_POST['submit'])) {
                 if (trim($username) == '' || trim($password) == '' || trim($phonenumber) == '' || trim($email) == '' || trim($zipcode) == '') {
@@ -36,7 +35,7 @@
         <div id="content">
         <h1>User Registration</h1>
         <?php echo '<span style="color: red;"><i>'.$warningtext.'</i></span>'; ?>
-        <form method="post" action="#">
+        <form method="post" action="">
                 <label title="Username">Username</label>
                 <br>
                 <br>

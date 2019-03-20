@@ -9,8 +9,6 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        session_start(); 
-
         // if ($_SESSION["logged_in"] == true) {
         //     echo 'you are logged in';
         // }
@@ -30,7 +28,7 @@
         ?>
         <div id="content">
             <h1>Login</h1>
-            <form method="post" action="#">
+            <form method="post" action="">
                 <label title="Username">Username</label>
                 <br>
                 <br>
