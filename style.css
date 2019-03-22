@@ -96,6 +96,14 @@ li a {
     text-decoration: none;
 }
 
+li input {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
@@ -107,6 +115,14 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
+
+h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 /*Hjemmesidets titel: Instakham photos*/
 #headertitle {
     color: white;
@@ -139,11 +155,13 @@ h1 {
     margin: auto;
 }
 
-#content h1 {
+/* #content h1 {
     margin: 100;
     margin-right: -50%;
     font-size: 30px;
-}
+} */
+
+
 
 label {
     color: white;
@@ -153,7 +171,36 @@ label {
     color: white;
 }
 
-#resize {
-    height: 10%;
-    width: auto;
+#posts {
+    width: 1100px;
+    margin: auto;
 }
+
+/*Pictures with header and description*/
+
+div.gallery {
+    margin: 50px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: rgb(104, 104, 104);
+  }
+  
+  /* div.gallery:hover {
+    border: 1px solid #777;
+  } */
+  
+  div.gallery img {
+    height: auto;
+    width: 1000px;
+  }
+  
+  div.header {
+    color: white;
+    text-align: center;
+  }
+
+  div.desc {
+    color: whitesmoke;
+    padding: 15px;
+    text-align: center;
+  }

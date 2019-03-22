@@ -43,7 +43,7 @@
                 <br>
                 <br>
                 <br>
-                <input type="submit" name="submit" id="submit" value="submit"/> 
+                <input type="submit" name="submit" id="submit" value="Submit"/> 
                 <br>
                 <br>
                 <input type="button" value="Go back" onclick="history.back()">

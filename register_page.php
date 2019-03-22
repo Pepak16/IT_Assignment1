@@ -2,6 +2,36 @@
 <html>
     <head>
         <title>Sign-up page</title>
+        <!-- <script>
+
+            //function that checks whether all fields live up to specific constraints
+            function checkFields() {
+
+                //variables initializes input from fields
+                var name = document.getElementById("name").value;
+                // var password = document.getElementById("password").value;
+                var phone = document.getElementById("phone").value;
+                // var email = document.getElementById("email").value;
+                // var zip = document.getElementById("zip").value;
+
+                var passwordConstraint = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/g;
+                var phoneConstraint = /^\+{1}[0-9]/;
+
+                //checking constraints
+                //if (passwordConstraint.test(password)) {
+                if (true) {
+                    if (phoneConstraint.test(phone)) {
+                        return true;
+                    } else {
+                        alert("Please check field constraints and try again");
+                        return false;
+                    }
+                } else {
+                    alert("Please check field constraints and try again");
+                    return false;
+                }
+            }
+        </script> -->
     </head>
     <body>
         <?php 
@@ -42,7 +72,8 @@
                 <input type="text" name="username" id="username"/> 
                 <br>  
                 <br>
-                <label title="Password" for="password">Password</label>
+                <label title="Password must contain 8 or more chars. At least one lower case char. At least one upper case char. At least one number.
+                " for="password">Password</label>
                 <br>
                 <br>
                 <input type="password" name="password" id="password"/> 
@@ -71,7 +102,7 @@
                 <br>
                 <input type="text" name="zip" id="zip"/> 
                 <br><br><br>
-                <input type="submit" name="submit" id="submit" value="submit"/> 
+                <input type="submit" name="submit" id="submit" value="Submit"/> 
                 <br> 
                 <br>
                 <input type="button" value="Go back" onclick="history.back()">

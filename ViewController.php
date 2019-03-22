@@ -1,11 +1,5 @@
 <?php
 
-// if (authentificateUser('Jens','123123pp')) {
-//     echo 'logged in';
-// } else {
-//     echo 'fail';
-// }
-
     function loginUser($username, $password) {
         require 'db_connect.php';
         if (authentificateUser($username,$password)) {
@@ -24,4 +18,17 @@
         }
     }
 
+    function viewAllPosts() {
+        require 'db_connect.php';
+        return selectAllPosts();
+    }
+
+    function postAPicture($header,$description,$url) {
+        require 'db_connect.php';
+        if (insertPost($header,$description,$url)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 ?>
